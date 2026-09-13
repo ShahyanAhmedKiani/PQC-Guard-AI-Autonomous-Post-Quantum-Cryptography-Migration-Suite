@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse at top left, rgba(201, 168, 76, 0.06), transparent 45%),
+    radial-gradient(ellipse at bottom right, rgba(201, 168, 76, 0.04), transparent 50%),
+    #07080B;
+  color: #EBE0C4;
+}
+
+/* Thin gilded scrollbars for the terminal panel */
+.gilt-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.gilt-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.gilt-scroll::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.35);
+  border-radius: 999px;
+}
+.gilt-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.55);
+}
+
+/* Subtle glass texture used across panels */
+.glass-panel {
+  background: linear-gradient(180deg, rgba(26, 30, 39, 0.65), rgba(18, 21, 28, 0.55));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(201, 168, 76, 0.16);
+}
+
+.glass-panel-inset {
+  background: rgba(7, 8, 11, 0.55);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 1.8s ease-in-out infinite;
+}
+
+@keyframes fade-in-row {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-row {
+  animation: fade-in-row 0.18s ease-out;
+}
